@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <h2 class="text-3xl font-bold text-center mb-6">Users List</h2>
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <% if (users.length === 0) { %>
+            <p class="text-center text-gray-500">No users found.</p>
+        <% } else { %>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <% users.forEach(user => { %>
+                    <div class="bg-gray-50 p-4 rounded-lg shadow">
+                        <img src="<%= user.imageUrl %>" alt="User Image" class="w-full h-40 object-cover rounded-md mb-2">
+                        <h3 class="text-xl font-semibold"><%= user.name %></h3>
+                        <p class="text-gray-600"><%= user.email %></p>
+                        <form action="/delete/<%= user._id %>" method="POST">
+                            <button class="bg-red-500 text-white px-4 py-2 mt-2 rounded">Delete</button>
+                        </form>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
+        <a href="/" class="block text-center mt-6 text-blue-600">Go Back</a>
+    </div>
+</body>
+</html>
