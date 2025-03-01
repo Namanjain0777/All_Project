@@ -1,0 +1,47 @@
+
+body{
+    background-color: lightgreen;
+    margin: 25px;
+    
+} 
+.imge{
+    align-items: center;
+    width: 55%;
+
+ }
+
+
+.title{
+    height: 25px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: dashed;
+}
+
+.img{
+    display: inline-block;
+    width: 100%;
+
+}
+
+.about{
+    height: 25px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: dashed;
+}
+
+b{
+    text-transform:uppercase;
+    text-decoration: underline;
+    
+}
+
+a{
+    text-align: center;
+    color: rgb(197, 38, 38);
+    text-transform: capitalize;
+    text-decoration: dashed;
+}

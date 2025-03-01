@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <DIV class="heading">
+    <h1>GeeksforGeeks Survey Form</h1></DIV>
+    <div class="main">
+        <h2>Name</h2>
+        <input type="text" id="name" min="1" max="25" placeholder="Enter Your Name">
+        <h2>Email</h2>
+        <input type="text" id="mail" min="1" max="100" placeholder="Enter Your Email">
+        <h2>Age</h2>
+        <input type="text" id="age" min="1" max="25" placeholder="Enter Your Age">
+        <br>
+        <br>
+        <div class="options">
+            <h2><label for="option">Which option best describes you?</label></h2>
+            <br>
+            <select name="  " id="option">
+            <option value="sTUDENTS">student</option>
+            <option value="teacher">Teacher</option>
+            </select>
+        </div>
+        <br>
+        <h2><lable>Would you recommend GeeksforGeeks to a friend?</lable></h2>
+        <br>
+        <input type="radio" id="recommend" name="recommend" value="yes">
+            <label for="yes">yes</label><br>
+            <input type="radio" id="css" name="fav_language" value="no">
+            <label for="no">no</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="maybe">
+            <label for="maybe">maybe</label>
+
+        <h2>Languages and Frameworks known (Check all that apply)</h2> <br>
+        <div class="again">
+            <label for="inp-1">
+                <input type="checkbox" name="inp">C
+                </input>
+            </label>
+            <label for="inp-2">
+                <input type="checkbox" name="inp">C++
+                </input>
+            </label>
+            <label for="inp-3">
+                <input type="checkbox" name="inp">C#
+                </input>
+            </label>
+            <label for="inp-4">
+                <input type="checkbox" name="inp">Java
+                </input>
+            </label>
+        </div>
+        <h2>Any commqpts or suggestions</h2>
+        <textarea name="comment" id="comment" 
+            placeholder="Enter your comment here">
+        </textarea>
+        <br>  
+        <button type="submit" value="submit">Submit</button>
+    </div>
+</body>
+</html>

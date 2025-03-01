@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Expense Tracker</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Button to toggle sidebar visibility (for mobile) -->
+    <button
+      data-drawer-target="default-sidebar"
+      data-drawer-toggle="default-sidebar"
+      aria-controls="default-sidebar"
+      type="button"
+      class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    >
+      <span class="sr-only">Open sidebar</span>
+      <svg
+        class="w-6 h-6"
+        aria-hidden="true"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Sidebar -->
+    <aside
+      id="default-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      aria-label="Sidebar"
+    >
+      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <ul class="space-y-2 font-medium">
+          <li>
+            <a
+              href="#expense"
+              id="expense"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 21"
+              >
+                <path
+                  d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"
+                />
+                <path
+                  d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
+                />
+              </svg>
+              <span class="ms-3">Expense</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#overview"
+              id="overview"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Z"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Overview</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#Transactions"
+              id="Transactions"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 21"
+              >
+                <path
+                  d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"
+                />
+                <path
+                  d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
+                />
+              </svg>
+              <span class="ms-3">Transactions</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#Scheduled-transactions"
+              id="Scheduled-transactions"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Z"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap"
+                >Scheduled Transactions</span
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Accounts"
+              id="Accounts"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 21"
+              >
+                <path
+                  d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"
+                />
+                <path
+                  d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
+                />
+              </svg>
+              <span class="ms-3">Accounts</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#Budgets"
+              id="Budgets"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Z"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Budgets</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Charts"
+              id="Charts"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 21"
+              >
+                <path
+                  d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"
+                />
+                <path
+                  d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
+                />
+              </svg>
+              <span class="ms-3">Charts</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#Debts"
+              id="Debts"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Z"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Debts</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Sign-up"
+              id="Sign-up"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 21"
+              >
+                <path
+                  d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"
+                />
+                <path
+                  d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
+                />
+              </svg>
+              <span class="ms-3">Sign up</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#Sign-In"
+              id="Sign-In"
+              class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Z"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
+            </a>
+          </li>
+
+          <div>
+            <input type="checkbox" class="checkbox" id="checkbox" />
+            <label for="checkbox" class="checkbox-label">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <span class="ball"></span>
+            </label>
+          </div>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main content area -->
+    <div class="p-4 sm:ml-64" id="main-content">
+      <div
+        class="p-4 border-2 border-gray-800 border-dashed rounded-lg dark:border-gray-700"
+      >
+        <div
+          id="main-content"
+          class="text-gray-400 dark:text-white gradient-animation fade-in"
+        >
+          <!-- Dynamic content will be inserted here -->
+          <h2 class="text-4xl font-semibold tracking-wide">
+            Welcome to the Expense Tracker
+          </h2>
+          <p class="mt-4 text-lg opacity-90">
+            Track your expenses and manage your finances effortlessly with our
+            modern web app. Stay on top of your spending with ease.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <article id="expense" class="pl-[300px] py-10">
+      <!-- Title Section -->
+      <h2 class="text-3xl font-extrabold text-gray-800">
+        Welcome to the Expense Tracker
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Manage your expenses effortlessly and track your financial goals with
+        ease. Our Expense Tracking Web App provides you with all the tools you
+        need to take control of your finances.
+      </p>
+
+      <!-- Introduction Section -->
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-gray-800">
+          What is Expense Tracking?
+        </h3>
+        <p class="mt-2 text-gray-600">
+          Expense tracking is the process of recording all the money you spend,
+          helping you understand where your money goes and how to budget
+          effectively. With our app, you can:
+        </p>
+        <ul class="mt-4 list-disc pl-5 space-y-2 text-gray-600">
+          <li>Track your daily expenses.</li>
+          <li>Set monthly budget limits.</li>
+          <li>Visualize spending patterns with easy-to-read charts.</li>
+          <li>Get notifications for over-budget categories.</li>
+        </ul>
+      </section>
+
+      <!-- Key Features Section -->
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-gray-800">Key Features</h3>
+        <p class="mt-2 text-gray-600">
+          Our Expense Tracker comes with several powerful features to help you
+          track your finances more efficiently:
+        </p>
+        <ul class="mt-4 list-disc pl-5 space-y-2 text-gray-600">
+          <li>Easy-to-use interface with a user-friendly dashboard.</li>
+          <li>
+            Category-based expense tracking (e.g., food, transport,
+            entertainment).
+          </li>
+          <li>Ability to add recurring expenses for easy tracking.</li>
+          <li>Generate monthly or yearly reports.</li>
+          <li>Multi-device sync to track expenses on any platform.</li>
+        </ul>
+      </section>
+
+      <!-- Instructions Section -->
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-gray-800">How to Get Started</h3>
+        <p class="mt-2 text-gray-600">
+          To get started, simply sign up for a free account and add your first
+          expense. Follow these steps:
+        </p>
+        <ol class="mt-4 list-decimal pl-5 space-y-2 text-gray-600">
+          <li>Sign up and log in to your account.</li>
+          <li>Go to the "Add Expense" section and input your first expense.</li>
+          <li>Choose a category (e.g., Groceries, Entertainment, Bills).</li>
+          <li>Set a budget limit for each category, if desired.</li>
+          <li>Monitor your expenses and adjust your budget as necessary!</li>
+        </ol>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="mt-8 text-center">
+        <p class="text-xl font-semibold text-gray-800">
+          Ready to take control of your finances? Start tracking your expenses
+          today!
+        </p>
+        <a
+          href="#start"
+          class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+        >
+          Get Started Now
+        </a>
+      </section>
+    </article>
+
+    <article
+      id="overview"
+      class="pl-[300px] py-10"
+      style="display: none"
+    >
+      <h2 class="text-3xl font-extrabold text-gray-800">
+        Overview of Expenses
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        This section will provide an overview of your current expenses and
+        budget.
+      </p>
+    </article>
+
+    <script src="index.js"></script>
+  </body>
+</html>

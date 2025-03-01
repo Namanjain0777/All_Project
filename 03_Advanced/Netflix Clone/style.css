@@ -1,0 +1,281 @@
+*{
+    margin: 0PX;
+    padding: 0PX;
+}
+
+body{
+    background-color: rgb(87, 87, 87);
+}
+
+.home{
+    background-image: url('image/bg.jpg');
+    filter: brightness(0.6); 
+    background-size: 100%;  
+    height: 695px; 
+   
+}
+
+.home>NAV{
+    color: red;
+    font-size: 35px;
+    padding: 10px;
+    display: inline;
+}
+
+.content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.content1>ul>li{
+    list-style: none;
+}
+
+.content1>ul>li:nth-child(1){
+    font-size: xx-large;
+    color: white;
+    font-variant: small-caps;
+    margin-left: 140px;
+}
+
+.content1>ul>li:nth-child(2){
+    font-size: x-large;
+    color: white;
+    font-variant: small-caps;
+    margin-left: 200px;
+}
+
+.content1>ul>li:nth-child(3){
+    font-size: x-large;
+    color: white;
+    font-variant: small-caps;
+    margin-left: 60px;
+}
+
+.content1 {
+    display: flex; /* add this line */
+    flex-direction: column; /* add this line */
+}
+
+.email input[type="email"] {
+    padding: 15px; /* increase padding to make the input box taller */
+    font-size: 18px; /* increase font size to make the text larger */
+    width: 300px; /* set a fixed width for the input box */
+    border-radius: 5px;
+    background-color: #6868685c;
+    color: #ffffff;
+}
+  
+.email input[type="submit"] {
+    padding: 15px 30px; /* increase padding to make the button taller and wider */
+    font-size: 18px; /* increase font size to make the text larger */
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+}
+
+.enjoy{
+    background-color: rgba(0, 0, 0, 0.634);
+}
+
+
+.box12{
+    width: 1477px;
+    height: 582px;
+    background-color: #000000;
+    border: 1px solid #0000006d;
+    padding: 20px;
+    
+}
+
+.box16{
+    display: inline-block;
+    width: 585px;
+    height: 162.4px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin-top: 200px;
+    position: absolute;
+    color: white;
+    
+}
+
+.box21{
+    display: inline-block;
+    width: 585px;
+    height: 438.25px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin-left: 700px;
+    top: 56px;
+    
+}
+
+.box21>img{
+    position: absolute;
+}
+
+.box21>video{
+    position: absolute;
+    margin-left: 82px;
+    margin-bottom: 90px;
+    
+}
+
+.download{
+    display: inline-block;
+    width: 1517px;
+    height: 700px;
+    background-color:  #000000;
+    border: 1px solid  #000000;
+    color: white;
+}
+.download-video{
+    display: inline-block;
+    width: 700px;
+    height: 550px;
+    background-color:  #000000;
+    border: 1px solid  #000000;
+    color: white;
+    position: absolute
+}
+.download-cont{
+    display: inline-block;
+    width: 700px;
+    height: 550px;
+    background-color: #000000;
+    border: 1px solid  #000000;
+    color: white;
+    position: absolute;
+    margin-top: 290px;
+    margin-left: 800px;
+    height: 100px;
+    position: absolute;
+}
+
+.watch{
+    display: inline-block;
+    width: 1517px;
+    height: 700px;
+    background-color:  #000000;
+    border: 1px solid  #000000;
+    color: rgb(0, 0, 0);
+}
+
+.watch-cont{
+    display: inline-block;
+    width: 700px;
+    height: 550px;
+    background-color:  #000000;
+    border: 1px solid  #000000;
+    color: white;
+    position: absolute;
+    margin-top: 150px;
+    text-align: left;
+}
+
+.watch-cont>h1,h2{
+    display: block;
+}
+.watch-video{
+    display: inline-block;
+    width: 700px;
+    height: 550px;
+    background-color:  #000000;
+    border: 1px solid  #000000;
+    color: white;
+    margin-left: 750px;
+    position: absolute;
+
+}
+  
+.watch-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.watch-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 460px;
+    height: 300PX;
+    margin-top: 40PX;
+    margin-left: 120PX;
+}
+
+.kid{
+    display: flex;
+    background-color: black;
+}
+.kid-img{
+    display: flex;
+    width: 585px;
+    height: 162.4px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin-top: 200px;
+    position: absolute;
+    color: white;
+    
+}
+
+.kid-cont{
+    
+    width: 585px;
+    height: 162.4px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin-top: 200px;
+    margin-left: 700px;
+    position: absolute;
+    color: white;
+    
+}
+
+.question{
+    color: white;
+    background-color: #000000;
+    text-align: center;
+}
+
+.box{
+    width: 1169px;
+    height: 83px;
+    margin-left: 174px;
+    background-color: rgb(84, 84, 84);
+    border: 1px solid #000000;
+    margin-top: 10px;
+    font-size: xx-large;
+    display: flex;
+    justify-content: flex-start; /* align to the left */
+    align-items: center;  
+}
+
+.question{
+    display: flex; /* add this line */
+    flex-direction: column;
+}
+
+.last{
+    width: 1344px;
+    height: 550px;
+    background-color:  #ff0000;
+    padding-left: 175px;
+    padding-top: 68px;
+}
+
+.boxes{
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    word-spacing: 200px;
+}
+

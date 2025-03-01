@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+        <title>
+            Accessible UI Design
+        </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="form">
+            <form action="submit" autocomplete="on">
+                <div class="inputs">
+                    <label for="full-name"> Full name</label>
+                    <input id="full-name" autocapitalize="words" aria-required="true" type="text" placeholder="Enter your name here"/>
+                    <label for="email">Email:</label>
+                    <input id="email" type="text/email" aria-required="true" aria-invalid="true" aria-errormessage="email-error-message" placeholder="john@doe.com"/>
+                    <p id="email-error-message" class="error-message">Please enter valid email</p>
+                    <label for="password1">Enter Password:</label>
+                    <input type="password" name="password1" id="password1" placeholder="xxxxxxxxx" aria-required="true">
+                    <span class="material-symbols-outlined visibility">visibility</span>
+                    <label for="password2">Confirm Password:</label>
+                    <input type="password" name="password2" id="password2" placeholder="xxxxxxxxx" aria-required="true" >
+                     <span class="material-symbols-outlined visibility">visibility_off</span>
+                    <button type="submit">Update Profile</button>
+                </div>
+                <div class="progress-describer">
+                    <div class="circular-progress" completed-forms ="75">
+                    <div class="inner-circle">
+                            <span class="progress-value">75%</span>
+                        </div>
+                </div>
+                    <p>Profile Completeness</p>
+                    <div id="completed-inputs">
+                        <p class="completed-forms">Create Account</p>
+                        <p class="completed-forms">Verify Identity</p>
+                        <p class="not-completed">Update profile</p>
+                        <ul>
+                            <li id="entered-name">Entered valid name</li>
+                            <li id="entered-email">Entered Valid Email</li>
+                            <li id="entered-password">Entered Password</li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

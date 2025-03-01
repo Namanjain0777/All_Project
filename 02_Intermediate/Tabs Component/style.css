@@ -1,0 +1,14 @@
+body{
+    border-color: rgb(36, 235, 99);
+    border-style: solid;
+
+}
+
+button-1 , butto-2 , butto-3 , button-4{
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    display: grid;
+    
+
+
+}
