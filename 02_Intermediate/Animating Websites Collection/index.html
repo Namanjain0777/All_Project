@@ -3,17 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animating Websites Collection</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="nav">
-        <img src="">
-        <h4> </h4>
-        <h4></h4>
-        <h4></h4>
-        <h4></h4>
-        <h4></h4>
+    <header>
+        <h1>Animating Websites Collection</h1>
+        <button class="toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    </header>
+
+    <div class="collection">
+        <div class="website-card fade-in">
+            <h2>Website 1</h2>
+            <p>Beautiful Parallax Landing Page</p>
+            <a href="#">View Demo</a>
+        </div>
+        <div class="website-card fade-in">
+            <h2>Website 2</h2>
+            <p>Smooth Scroll Portfolio</p>
+            <a href="#">View Demo</a>
+        </div>
+        <div class="website-card fade-in">
+            <h2>Website 3</h2>
+            <p>Interactive Product Gallery</p>
+            <a href="#">View Demo</a>
+        </div>
+        <div class="website-card fade-in">
+            <h2>Website 4</h2>
+            <p>Animated E-commerce Page</p>
+            <a href="#">View Demo</a>
+        </div>
+        <div class="website-card fade-in">
+            <h2>Website 5</h2>
+            <p>3D Card Flip Blog</p>
+            <a href="#">View Demo</a>
+        </div>
+        <div class="website-card fade-in">
+            <h2>Website 6</h2>
+            <p>Full Page Scroll Animation</p>
+            <a href="#">View Demo</a>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Animating Websites Collection</p>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>

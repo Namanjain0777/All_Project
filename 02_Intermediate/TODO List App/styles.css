@@ -1,95 +1,159 @@
-/* styles.css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root {
+  --background: #121212;
+  --container-bg: rgba(255, 255, 255, 0.1);
+  --text-color: #ffffff;
+  --input-bg: #333333;
+  --button-bg: #6200ea;
+  --button-hover-bg: #3700b3;
+  --task-bg: #333333;
+  --delete-btn-bg: #d32f2f;
+  --delete-btn-hover-bg: #b71c1c;
+}
+
+.light-theme {
+  --background: #f0f0f0;
+  --container-bg: rgba(0, 0, 0, 0.05);
+  --text-color: #121212;
+  --input-bg: #ffffff;
+  --button-bg: #6200ea;
+  --button-hover-bg: #3700b3;
+  --task-bg: #ffffff;
+  --delete-btn-bg: #d32f2f;
+  --delete-btn-hover-bg: #b71c1c;
+}
+
+.container {
+  background: var(--container-bg);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: background 0.5s, color 0.5s;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--input-bg);
+  border: none;
+  border-radius: 5px;
+  color: var(--text-color);
+  outline: none;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+button {
+  padding: 10px;
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+li {
+  background-color: var(--task-bg);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
-  
-  .input-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    background-color: #333333;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    outline: none;
-  }
-  
-  button {
-    width: 25%;
-    padding: 10px;
-    background-color: #6200ea;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #3700b3;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    background-color: #333333;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  li.completed {
-    text-decoration: line-through;
-    opacity: 0.7;
-  }
-  
-  li button {
-    background-color: #d32f2f;
-    border: none;
-    padding: 5px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  li button:hover {
-    background-color: #b71c1c;
-  }
-  
+}
+
+li.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+li button {
+  background-color: var(--delete-btn-bg);
+  border: none;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: var(--delete-btn-hover-bg);
+}
+
+#clear-all-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff5722;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+#clear-all-btn:hover {
+  background-color: #e64a19;
+}
