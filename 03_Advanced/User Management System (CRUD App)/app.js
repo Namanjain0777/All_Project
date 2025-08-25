@@ -47,6 +47,30 @@ app.post('/delete/:id', async (req, res) => {
     }
 });
 
+// Edit user form
+app.get('/edit/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+        res.render('edit', { user });
+    } catch (error) {
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+// Update user
+app.post('/update/:id', async (req, res) => {
+    const { name, email, imageUrl } = req.body;
+    try {
+        await User.findByIdAndUpdate(req.params.id, { name, email, imageUrl });
+        res.redirect('/read');
+    } catch (error) {
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
